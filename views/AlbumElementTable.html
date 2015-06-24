@@ -1,0 +1,18 @@
+
+<tr>
+    <div class="img-responsive">
+        <td>
+            <img ng-src="assets/images/{{album.image}}" class="img-rounded">
+        </td>
+    </div>
+    <td>
+        <a ng-href="#/albums/{{ ::album.id }}/details" title="Detalle del álbum">{{ ::album.title }}</a>
+    </td>
+    <td>{{ ::album.band.name }}</td>
+    <td>{{ ::album.genre.name }}</td>
+    <td>{{ ::album.year}}</td>
+    <!--<td>
+        <span artcc-favorites id-album="model.id"></span>
+    </td>-->
+
+</tr>
