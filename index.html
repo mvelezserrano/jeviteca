@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="jeviteca">
 <head lang="en">
     <meta charset="UTF-8" />
-    <title>IMDB Pobre</title>
+    <title>Jeviteca - by MAVS</title>
+    <link rel="stylesheet" href="styles/css/bootstrap.min.css">
     <script src="vendor/angular.min.js" ></script>
-    <!-- script src="vendor/angular-route.min.js" ></script -->
-    <!-- script src="vendor/angular-route-segment.min.js" ></script -->
+    <script src="vendor/angular-route.min.js" ></script>
+    <script src="vendor/angular-route-segment.min.js" ></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/Navegacion.js"></script>
+    <script src="scripts/controllers/AlbumsCtrl.js"></script>
+    <script src="scripts/controllers/BandsCtrl.js"></script>
+    <script src="scripts/controllers/GenresCtrl.js"></script>
+    <script src="scripts/services/AlbumProvider.js"></script>
+    <script src="scripts/services/BandProvider.js"></script>
+    <script src="scripts/services/GenreProvider.js"></script>
  </head>
  <body>
-
+    <div class="container">
+        <header>
+            <h1>Jeviteca</h1>
+            <h3>The best Heavy Metal collection</h3>
+        </header>
+        <nav ng-controller="NavegacionCtrl">
+            <ul class="nav nav-tabs">
+                <li role="presentation" ng-class="{ 'active' : routeIsAlbums() }">
+                    <a href="#/albums">Albums</a>
+                </li>
+                <li role="presentation" ng-class="{ 'active' : routeIsBands() }">
+                    <a href="#/bands">Bands</a>
+                </li>
+                <li role="presentation" ng-class="{ 'active' : routeIsGenres() }">
+                    <a href="#/genres">Genres</a>
+                </li>
+            </ul>
+        </nav>
+        <section app-view-segment="0"></section>
+    </div>
  </body>
  </html>

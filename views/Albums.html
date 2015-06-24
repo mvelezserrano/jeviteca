@@ -1,0 +1,17 @@
+
+<table class="table table-striped">
+    <th>Title</th>
+    <th>Band</th>
+    <th>Genre</th>
+    <th>Year</th>
+    <tr ng-repeat="album in albums">
+        <!--<td>
+            <img ng-src="assets/images/{{album.image}}" class="img-thumbnail">
+        </td>-->
+
+        <td>{{ ::album.title }}</td>
+        <td>{{ ::album.band.name }}</td>
+        <td>{{ ::album.genre.name }}</td>
+        <td>{{ ::album.year }}</td>
+    </tr>
+</table>
