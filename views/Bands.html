@@ -1,13 +1,11 @@
 
 <table class="table table-striped">
-    <th>Name</th>
-    <th>Origin</th>
-    <tr ng-repeat="band in bands">
-        <!--<td>
-            <img ng-src="assets/images/{{album.image}}" class="img-thumbnail">
-        </td>-->
+    <thead>
+        <th>Name</th>
+        <th>Origin</th>
+    </thead>
+    <tbody>
+        <tr band-element-table ng-repeat="band in bands" band="band"></tr>
+    </tbody>
 
-        <td>{{ ::band.name }}</td>
-        <td>{{ ::band.origin }}</td>
-    </tr>
 </table>

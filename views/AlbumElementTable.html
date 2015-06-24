@@ -1,12 +1,10 @@
 
 <tr>
-    <div class="img-responsive">
-        <td>
-            <img ng-src="assets/images/{{album.image}}" class="img-rounded">
-        </td>
-    </div>
     <td>
-        <a ng-href="#/albums/{{ ::album.id }}/details" title="Detalle del álbum">{{ ::album.title }}</a>
+        <img ng-src="assets/images/{{album.image}}" class="img-rounded">
+    </td>
+    <td>
+        <a ng-href="#/albums/{{ ::album.id }}/details" title="Album details">{{ ::album.title }}</a>
     </td>
     <td>{{ ::album.band.name }}</td>
     <td>{{ ::album.genre.name }}</td>

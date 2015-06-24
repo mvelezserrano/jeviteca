@@ -1,9 +1,14 @@
 
 <table class="table table-striped">
-    <th>Front</th>
-    <th>Title</th>
-    <th>Band</th>
-    <th>Genre</th>
-    <th>Year</th>
-    <tr album-element-table ng-repeat="album in albums" album="album"></tr>
+    <thead>
+        <th>Front</th>
+        <th>Title</th>
+        <th>Band</th>
+        <th>Genre</th>
+        <th>Year</th>
+    </thead>
+    <tbody>
+        <tr album-element-table ng-repeat="album in albums" album="album"></tr>
+    </tbody>
+
 </table>
