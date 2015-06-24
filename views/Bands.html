@@ -2,10 +2,11 @@
 <table class="table table-striped">
     <thead>
         <th>Name</th>
+        <th>Components</th>
         <th>Origin</th>
     </thead>
     <tbody>
-        <tr band-element-table ng-repeat="band in bands" band="band"></tr>
+        <tr band-element-table ng-repeat="band in bands | orderBy:'name'" band="band"></tr>
     </tbody>
 
 </table>

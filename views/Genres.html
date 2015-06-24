@@ -1,11 +1,11 @@
 
 <table class="table table-striped">
-    <th>Name</th>
-    <tr ng-repeat="genre in genres">
-        <!--<td>
-            <img ng-src="assets/images/{{album.image}}" class="img-thumbnail">
-        </td>-->
+    <thead>
+        <th>Name</th>
+        <th>Albums</th>
+    </thead>
+    <tbody>
+        <tr genre-element-table ng-repeat="genre in genres | orderBy:'name'" genre="genre"></tr>
+    </tbody>
 
-        <td>{{ ::genre.name }}</td>
-    </tr>
 </table>

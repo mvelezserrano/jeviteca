@@ -8,7 +8,7 @@
         <th>Year</th>
     </thead>
     <tbody>
-        <tr album-element-table ng-repeat="album in albums" album="album"></tr>
+        <tr album-element-table ng-repeat="album in albums | orderBy:'title'" album="album"></tr>
     </tbody>
 
 </table>

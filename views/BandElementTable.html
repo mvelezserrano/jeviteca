@@ -1,6 +1,10 @@
 
 <tr>
     <td>{{ ::band.name }}</td>
+    <td>{{ ::band.members | bandComponents }}</td>
+    <!--<td>
+        <p ng-repeat="member in band.members | orderBy:'name'">{{::member.name}}</p>
+    </td>-->
     <td>{{ ::band.origin }}</td>
     <!--<td>
         <span artcc-favorites id-album="model.id"></span>
