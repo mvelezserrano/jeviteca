@@ -8,16 +8,16 @@ angular
         // Para que la vista tenga acceso a la función, esta tiene que colgar del scope
         $scope.routeIsAlbums = function () {
             // Es un booleano, es una condición que comprueba si el segmento (o la vista) en la que se está navegando
-            // se llama "albumes".
-            return $routeSegment.startsWith("albums");
+            // se llama "albums".
+            return $routeSegment.startsWith("album");
         }
 
         $scope.routeIsBands = function () {
-            return $routeSegment.startsWith("bands");
+            return $routeSegment.startsWith("band");
         }
 
         $scope.routeIsGenres = function () {
-            return $routeSegment.startsWith("genres");
+            return $routeSegment.startsWith("genre");
         }
 
     }]);

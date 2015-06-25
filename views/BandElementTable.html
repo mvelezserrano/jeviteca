@@ -1,6 +1,8 @@
 
 <tr>
-    <td>{{ ::band.name }}</td>
+    <td>
+        <a ng-href="#/bands/{{ ::band.id }}/details" title="Band details">{{ ::band.name }}</a>
+    </td>
     <td>{{ ::band.members | bandComponents }}</td>
     <td>{{ ::band.origin }}</td>
     <td>

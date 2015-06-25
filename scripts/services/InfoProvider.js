@@ -11,7 +11,7 @@ angular
 
             var deferred = $q.defer();
 
-            $http.get("resources/data/albums.json").then(function(data) {
+            $http.get("assets/data/albums.json").then(function(data) {
 
                 var element = $filter("filter")(data.data, {"id": albumId})[0];
 
@@ -23,6 +23,20 @@ angular
 
         this.getBands = function() {
             return $http.get("assets/data/bands.json");
+        };
+
+        this.getBandById = function(bandId) {
+
+            var deferred = $q.defer();
+
+            $http.get("assets/data/bands.json").then(function(data) {
+
+                var element = $filter("filter")(data.data, {"id": bandId})[0];
+
+                deferred.resolve(element);
+            });
+
+            return deferred.promise;
         };
 
         this.getGenres = function() {
