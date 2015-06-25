@@ -1,8 +1,72 @@
+<!--
+    <p></p>
 
-<h3>Album Detail</h3>
+        <div class="row">
+            <div class="col-xs-7 col-sm-5 col-md-4 col-lg-4">
+                <img ng-src="assets/images/{{album.image}}" class="img-thumbnail">
+            </div>
+            <div class="col-xs-5 col-sm-7 col-md-8 col-lg-8">
+                <div class="row">
+                    <h4>Title</h4>
+                    <p>{{ ::album.title }}</p>
+                </div>
+                <div class="row">
+                    <h4>Band</h4>
+                    <p>{{ ::album.band.name }}</p>
+                </div>
+                <div class="row">
+                    <h4>Year</h4>
+                    <p>{{ ::album.year }}</p>
+                </div>
+                <div class="row">
+                    <h4>Genre</h4>
+                    <p>{{ ::album.genre.name }}</p>
+                </div>
+            </div>
+        </div>
+    <div></div>
+    <div class="row">
+        <h4>Tracklist</h4>
+    </div>-->
 
-<article>
-    <h4>{{ ::album.title }}</h4>
-    <p>{{ ::album.year }}</p>
-    <img ng-src="assets/images/{{album.image}}" class="img-thumbnail">
-</article>
+    <article class="album-detail">
+        <header class="marg-top-2x">
+            <p></p>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#/albums">Back</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 col-sm-5 col-md-4 col-lg-4">
+                    <img ng-src="assets/images/{{::album.image}}" class="img-thumbnail">
+                </div>
+                <div class="col-xs-5 col-sm-7 col-md-8 col-lg-8">
+                    <h3>Title</h3>
+                    <h4>{{ ::album.title}}</h4>
+                    <h3>Band</h3>
+                    <h4><a href="#/bands/{{::album.band.id}}/details" title="Click to detail view">{{::album.band.name}}</a></h4>
+                    <h3>Year</h3>
+                    <h4>{{::album.year }}</h4>
+                    <h3>Favorite</h3>
+                    <p favorites id-model="album.id"></p>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="bs-callout bs-callout-danger">
+                <h3>Tracklist</h3>
+
+                <table class="table table-striped" style="margin-top:20px">
+                    <thead>
+                    <th>Title</th>
+                    </thead>
+                    <tr ng-repeat="track in album.tracklist | orderItems">
+                        <td style="width:95%">{{::track}}</td>
+                        <!--<td style="width:5%"><a class="text-danger" ng-href="{{::youtubeSearch}}{{::album.title}}-{{::track}}" target="_blank" title="Watch on Youtube"><i class="glyphicon glyphicon-play"></i></a></td>-->
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </article>
+
