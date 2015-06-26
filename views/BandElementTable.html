@@ -3,8 +3,9 @@
     <td>
         <a ng-href="#/bands/{{ ::band.id }}/details" title="Band details">{{ ::band.name }}</a>
     </td>
-    <td>{{ ::band.members | bandComponents }}</td>
-    <td>{{ ::band.origin }}</td>
+    <td>
+        <span class="badge">{{ ::band.albums.length}}</span>
+    </td>
     <td>
         <span favorites id-model="band.id"></span>
     </td>
