@@ -7,30 +7,62 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-7 col-sm-5 col-md-4 col-lg-4">
-        <img ng-src="assets/images/{{::album.image}}" class="img-thumbnail">
+    <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Album Cover</h3>
+            </div>
+            <div class="panel-body">
+                <img ng-src="assets/images/{{::album.image}}" class="img-thumbnail center-block">
+            </div>
+        </div>
     </div>
-    <div class="col-xs-5 col-sm-7 col-md-8 col-lg-8">
-        <h3>Title</h3>
-        <h4>{{ ::album.title}}</h4>
-        <h3>Band</h3>
-        <h4><a href="#/bands/{{::album.band.id}}/details" title="Get Band Info">{{::album.band.name}}</a></h4>
-        <h3>Year</h3>
-        <h4>{{::album.year }}</h4>
-        <h3>Favorite</h3>
-        <p favorites id-model="album.id"></p>
+    <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Title</h3>
+            </div>
+            <div class="panel-body">
+                {{ ::album.title}}<p favorites id-model="album.id"></p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Band</h3>
+            </div>
+            <div class="panel-body">
+                <a href="#/bands/{{::album.band.id}}/details" title="Get Band Info">{{::album.band.name}}</a>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Year</h3>
+            </div>
+            <div class="panel-body">
+                {{::album.year }}
+            </div>
+        </div>
     </div>
 </div>
-<div>
-    <h3>Tracklist</h3>
-    <table class="table table-striped">
-        <thead>
-        <th>#</th>
-        <th>Track Name</th>
-        <th>Watch on Youtube</th>
-        </thead>
-        <tbody>
-        <tr track-list-element-table ng-repeat="track in album.tracklist" track-number="$index + 1" track-name="track" band-name="album.band.name"></tr>
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tracklist</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <th>#</th>
+                    <th>Track Name</th>
+                    <th>Watch on Youtube</th>
+                    </thead>
+                    <tbody>
+                    <tr track-list-element-table ng-repeat="track in album.tracklist" track-number="$index + 1" track-name="track" band-name="album.band.name"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
