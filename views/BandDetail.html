@@ -1,6 +1,6 @@
 
 
-<div class="row">
+<!--<div class="row">
     <div class="col-md-4">
         <p></p>
         <a href="javascript:history.back()">Back</a>
@@ -35,4 +35,69 @@
         <tr track-list-element-table ng-repeat="track in album.tracklist" track-number="$index + 1" track-name="track" band-name="album.band.name"></tr>
         </tbody>
     </table>
+</div>-->
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <p></p>
+        <a href="javascript:history.back()">Back</a>
+        <p></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-11 col-md-10 col-lg-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Name</h3>
+            </div>
+            <div class="panel-body">
+                {{ ::band.name}}<p favorites id-model="album.id"></p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Origin</h3>
+            </div>
+            <div class="panel-body">
+                {{::band.origin}}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Components</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="band-member-list">
+                    <li ng-repeat="member in band.members">
+                        {{ ::member.name }} ({{ member.instruments | arrayToStringFilter }})
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Discography</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <th>Album Cover</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>Favorite</th>
+                    </thead>
+                    <tbody>
+                    <tr album-element-table ng-repeat="album in band.albums | orderBy:'title'" album="album"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
