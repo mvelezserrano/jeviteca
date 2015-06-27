@@ -1,7 +1,11 @@
 
 <tr>
-    <td>{{ ::genre.name }}</td>
-    <td>{{ ::genre.albums | albumsForGenre}}</td>
+    <td>
+        <a ng-href="#/genres/{{ ::genre.id }}/details" title="Genre details">{{ ::genre.name }}</a>
+    </td>
+    <td>
+        <span class="badge">{{ ::genre.albums.length}}</span>
+    </td>
     <td>
         <span favorites id-model="genre.id"></span>
     </td>

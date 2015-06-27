@@ -43,5 +43,19 @@ angular
             return $http.get(Settings.genresUrl);
         };
 
+        this.getGenreById = function(genreId) {
+
+            var deferred = $q.defer();
+
+            $http.get(Settings.bandsUrl).then(function(data) {
+
+                var element = $filter("filter")(data.data, {"id": genreId})[0];
+
+                deferred.resolve(element);
+            });
+
+            return deferred.promise;
+        };
+
 
     }]);

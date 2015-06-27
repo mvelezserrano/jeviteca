@@ -11,6 +11,7 @@ angular
 
         $routeSegmentProvider.when( "/albums/:id/details", "album_detail" )
         $routeSegmentProvider.when( "/bands/:id/details", "band_detail" )
+        $routeSegmentProvider.when( "/genres/:id/details", "genre_detail" )
 
         $routeSegmentProvider.segment("albums", {
             controller: "AlbumsCtrl",
@@ -62,6 +63,18 @@ angular
             resolve: {
                 Genres: ["InfoProvider", function(InfoProvider) {
                     return InfoProvider.getGenres();
+                }]
+            }
+        });
+
+        $routeSegmentProvider.segment("genre_detail", {
+
+            controller: "GenreDetailCtrl",
+            templateUrl: "views/GenreDetail.html",
+            resolve: {
+
+                Genre: ["InfoProvider", "$routeParams", function(InfoProvider, $routeParams) {
+                    return InfoProvider.getGenreById($routeParams.id);
                 }]
             }
         });

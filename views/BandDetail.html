@@ -1,44 +1,5 @@
 
 
-<!--<div class="row">
-    <div class="col-md-4">
-        <p></p>
-        <a href="javascript:history.back()">Back</a>
-        <p></p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-5 col-sm-7 col-md-8 col-lg-8">
-        <h4>Name</h4>
-        <p>{{ ::band.name}}</p>
-        <h4>Origin</h4>
-        <p>{{::band.origin}}</p>
-        <h4>Components</h4>
-        <ul class="band-member-list">
-            <li ng-repeat="member in band.members">
-                {{ ::member.name }} ({{ member.instruments | arrayToStringFilter }})
-            </li>
-        </ul>
-        <h4>Favorite<p favorites id-model="album.id"></p></h4>
-
-    </div>
-</div>
-<div>
-    <h4>Tracklist</h4>
-    <table class="table table-striped">
-        <thead>
-        <th>#</th>
-        <th>Track Name</th>
-        <th>Watch on Youtube</th>
-        </thead>
-        <tbody>
-        <tr track-list-element-table ng-repeat="track in album.tracklist" track-number="$index + 1" track-name="track" band-name="album.band.name"></tr>
-        </tbody>
-    </table>
-</div>-->
-
-
-
 <div class="row">
     <div class="col-md-4">
         <p></p>
@@ -53,7 +14,7 @@
                 <h3 class="panel-title">Name</h3>
             </div>
             <div class="panel-body">
-                {{ ::band.name}}<p favorites id-model="album.id"></p>
+                {{ ::band.name}}<p favorites id-model="album.id"></p><p class="glyphicon glyphicon-search" ng-click="openWikipediaLink()" title="Search on Wikipedia"></p>
             </div>
         </div>
         <div class="panel panel-default">
@@ -85,18 +46,21 @@
                 <h3 class="panel-title">Discography</h3>
             </div>
             <div class="panel-body">
-                <table class="table table-striped">
-                    <thead>
-                    <th>Album Cover</th>
-                    <th>Title</th>
-                    <th>Genre</th>
-                    <th>Year</th>
-                    <th>Favorite</th>
-                    </thead>
-                    <tbody>
-                    <tr album-element-table ng-repeat="album in band.albums | orderBy:'title'" album="album"></tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <th>Album Cover</th>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Year</th>
+                        <th>Favorite</th>
+                        </thead>
+                        <tbody>
+                        <tr album-element-table ng-repeat="album in band.albums | orderBy:'title'" album="album"></tr>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
     </div>

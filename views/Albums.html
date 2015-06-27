@@ -1,14 +1,27 @@
 
-<table class="table table-striped">
-    <thead>
-        <th>Album Cover</th>
-        <th>Title</th>
-        <th>Genre</th>
-        <th>Year</th>
-        <th>Favorite</th>
-    </thead>
-    <tbody>
-        <tr album-element-table ng-repeat="album in albums | orderBy:'title'" album="album"></tr>
-    </tbody>
 
-</table>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span class="input-group filter-group">
+            <!--<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="text" ng-model="" class="form-control" placeholder="Search...">-->
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <th>Album Cover</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Year</th>
+                <th>Favorite</th>
+                </thead>
+                <tbody>
+                <tr album-element-table ng-repeat="album in albums | orderBy:'title'" album="album"></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
